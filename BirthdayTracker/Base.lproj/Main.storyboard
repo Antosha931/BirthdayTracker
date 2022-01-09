@@ -1,24 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lvd-3w-6X6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Дни рождения-->
+        <scene sceneID="nva-gH-rmF">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="feq-Pr-hei" customClass="BirthdayListTableViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eZL-YU-6gm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="02h-m7-v2U" detailTextLabel="0ds-ag-FNe" style="IBUITableViewCellStyleSubtitle" id="mMd-M7-p9i">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMd-M7-p9i" id="OaW-YA-aOe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02h-m7-v2U">
+                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ds-ag-FNe">
+                                            <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="feq-Pr-hei" id="iEs-Ve-ruG"/>
+                            <outlet property="delegate" destination="feq-Pr-hei" id="ETd-RX-Pxe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Дни рождения" id="1EA-8b-oXt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="gmW-z3-aYX">
+                            <connections>
+                                <segue destination="E3w-ob-ZdG" kind="presentation" id="iOK-gT-L9f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xyT-u9-c5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1578" y="149"/>
+        </scene>
+        <!--Add Birthday View Controller-->
+        <scene sceneID="MXq-AD-SIl">
+            <objects>
+                <viewController id="E3w-ob-ZdG" customClass="AddBirthdayViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3LH-qi-5yB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" backIndicatorImage="square.and.arrow.up.fill" catalog="system" backIndicatorTransitionMaskImage="square.and.arrow.up" translatesAutoresizingMaskIntoConstraints="NO" id="pUg-AE-u0E">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Добавления Дня рождения" id="SBj-8L-TH9">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XIH-vx-O5f">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="E3w-ob-ZdG" id="SUj-iy-tQK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mQ3-Ij-FnZ">
+                                            <color key="tintColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="saveUserDataButton:" destination="E3w-ob-ZdG" id="uwI-eT-ZcT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя именниника" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="wic-qK-79j">
+                                <rect key="frame" x="120" y="96" width="274" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилиля именниника" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lW-DW-86o">
+                                <rect key="frame" x="120" y="150" width="274" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="fdG-nO-ahZ">
+                                <rect key="frame" x="0.0" y="265" width="414" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <locale key="locale" localeIdentifier="ru_RU"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKJ-XA-83G">
+                                <rect key="frame" x="10" y="155" width="100" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-uh-xCS">
+                                <rect key="frame" x="10" y="219" width="394" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okW-yY-MUj">
+                                <rect key="frame" x="10" y="96" width="100" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LhH-wa-pBl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wic-qK-79j" firstAttribute="top" secondItem="pUg-AE-u0E" secondAttribute="bottom" constant="40" id="2FH-Wd-CKz"/>
+                            <constraint firstItem="AKJ-XA-83G" firstAttribute="top" secondItem="okW-yY-MUj" secondAttribute="bottom" constant="35" id="4Of-0C-gqL"/>
+                            <constraint firstItem="8lW-DW-86o" firstAttribute="top" secondItem="wic-qK-79j" secondAttribute="bottom" constant="20" id="6r1-AU-vsY"/>
+                            <constraint firstItem="fdG-nO-ahZ" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" id="AXJ-Je-OOk"/>
+                            <constraint firstItem="okW-yY-MUj" firstAttribute="top" secondItem="pUg-AE-u0E" secondAttribute="bottom" constant="40" id="DBj-90-TS7"/>
+                            <constraint firstItem="LhH-wa-pBl" firstAttribute="trailing" secondItem="wic-qK-79j" secondAttribute="trailing" constant="20" id="Dgv-x3-OEI"/>
+                            <constraint firstItem="AKJ-XA-83G" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" constant="10" id="HNF-vi-nHW"/>
+                            <constraint firstItem="wic-qK-79j" firstAttribute="leading" secondItem="okW-yY-MUj" secondAttribute="trailing" constant="10" id="JYX-f7-9El"/>
+                            <constraint firstItem="wic-qK-79j" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" constant="120" id="Kd4-95-AMW"/>
+                            <constraint firstItem="fdG-nO-ahZ" firstAttribute="top" secondItem="8lW-DW-86o" secondAttribute="bottom" constant="80" id="LMP-8X-kF8"/>
+                            <constraint firstItem="LhH-wa-pBl" firstAttribute="trailing" secondItem="QVC-uh-xCS" secondAttribute="trailing" constant="10" id="Puz-cp-gxW"/>
+                            <constraint firstItem="fdG-nO-ahZ" firstAttribute="trailing" secondItem="LhH-wa-pBl" secondAttribute="trailing" id="Wpx-oY-m4k"/>
+                            <constraint firstItem="QVC-uh-xCS" firstAttribute="top" secondItem="AKJ-XA-83G" secondAttribute="bottom" constant="40" id="aNO-uy-Pry"/>
+                            <constraint firstItem="pUg-AE-u0E" firstAttribute="trailing" secondItem="LhH-wa-pBl" secondAttribute="trailing" id="gHT-MC-sKM"/>
+                            <constraint firstItem="QVC-uh-xCS" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" constant="10" id="gcr-mh-0Zg"/>
+                            <constraint firstItem="pUg-AE-u0E" firstAttribute="top" secondItem="LhH-wa-pBl" secondAttribute="top" id="iHx-dd-zbI"/>
+                            <constraint firstItem="okW-yY-MUj" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" constant="10" id="icP-1k-TPn"/>
+                            <constraint firstItem="8lW-DW-86o" firstAttribute="leading" secondItem="AKJ-XA-83G" secondAttribute="trailing" constant="10" id="jnx-uV-jUp"/>
+                            <constraint firstItem="pUg-AE-u0E" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" id="kP8-pc-tue"/>
+                            <constraint firstItem="LhH-wa-pBl" firstAttribute="trailing" secondItem="8lW-DW-86o" secondAttribute="trailing" constant="20" id="nYg-V0-mhq"/>
+                            <constraint firstItem="8lW-DW-86o" firstAttribute="leading" secondItem="LhH-wa-pBl" secondAttribute="leading" constant="120" id="uwN-Hy-cVu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v9V-8i-ewu"/>
+                    <connections>
+                        <outlet property="birthdayTextLabel" destination="QVC-uh-xCS" id="w4Q-S1-Fmp"/>
+                        <outlet property="userBirthdayDatePicker" destination="fdG-nO-ahZ" id="hmC-oB-Gc9"/>
+                        <outlet property="userLastNameTextField" destination="8lW-DW-86o" id="yGA-c5-evW"/>
+                        <outlet property="userNameTextField" destination="wic-qK-79j" id="TF7-KS-nKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ls2-5i-uQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p05-U0-9Or">
+            <objects>
+                <navigationController id="Lvd-3w-6X6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6W5-uF-ks7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="feq-Pr-hei" kind="relationship" relationship="rootViewController" id="yWM-NS-wnn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NGP-GA-w1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
