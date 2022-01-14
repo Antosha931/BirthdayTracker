@@ -6,24 +6,47 @@
 //
 
 import UIKit
+import CoreData
+import UserNotifications
 
-class BirthdayListTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
+
+class BirthdayListTableViewController: UITableViewController {
     
-    let reuseIdentifier = "reuseIdentifier"
     
-    var birthdayList = [User]()
+    let birthdayCellIdentifier = "birthdayCellIdentifier"
+    
+    var birthdayList = [Birthday]()
     
     let formmater = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        formmater.dateStyle = DateFormatter.Style.full
-        formmater.timeStyle = .none
-        
         self.clearsSelectionOnViewWillAppear = false
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.delegate = self
+        
+        formmater.dateStyle = DateFormatter.Style.full
+        formmater.timeStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
+        
+        let sortDescriptorOne = NSSortDescriptor(key: "firstName", ascending: true)
+        let sortDescriptorTwo = NSSortDescriptor(key: "lastName", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptorOne, sortDescriptorTwo]
+        
+        do {
+            birthdayList = try context.fetch(fetchRequest)
+        } catch let error {
+            print("Не удалось сохранить из-за ошибки: \(error)")
+        }
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -37,29 +60,54 @@ class BirthdayListTableViewController: UITableViewController, AddBirthdayViewCon
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: birthdayCellIdentifier, for: indexPath)
         
         let birthday = birthdayList[indexPath.row]
         
-        cell.textLabel?.text = birthday.name + " " + birthday.lastName
+        let firstName = birthday.firstName ?? ""
         
-        cell.detailTextLabel?.text = formmater.string(from: birthday.dateOfBirth)
-
-        return cell
+        let lastName = birthday.lastName ?? ""
+        
+        cell.textLabel?.text = firstName + " " + lastName
+        
+        if let date = birthday.dateOfBirth as Date? {
+            cell.detailTextLabel?.text = formmater.string(from: date)
+        } else {
+            cell.detailTextLabel?.text = ""
+        }
+        
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = #colorLiteral(red: 1, green: 0.6899557249, blue: 0.9783657575, alpha: 1)
+            return cell
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 0.8015632962, green: 0.9183090496, blue: 1, alpha: 1)
+            return cell
+        }
     }
     
     // MARK: - Delegate
     
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: User) {
-        birthdayList.append(birthday)
-        tableView.reloadData()
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as? UINavigationController
-        let addBirthdayViewController = navigationController?.topViewController as? AddBirthdayViewController
-        addBirthdayViewController?.delegate = self
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if birthdayList.count > indexPath.row {
+            let birthday = birthdayList[indexPath.row]
+            
+            if let identifier = birthday.birthdayID {
+                let centre = UNUserNotificationCenter.current()
+                centre.removePendingNotificationRequests(withIdentifiers: [identifier])
+            }
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(birthday)
+            birthdayList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .middle)
+        
+        do {
+            try context.save()
+        } catch let error {
+            print("Не удалось сохранить из-за ошибки: \(error)")
+        }
+            
+        }
     }
 }

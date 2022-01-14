@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lvd-3w-6X6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8d5-kz-aVl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="02h-m7-v2U" detailTextLabel="0ds-ag-FNe" style="IBUITableViewCellStyleSubtitle" id="mMd-M7-p9i">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCellIdentifier" textLabel="02h-m7-v2U" detailTextLabel="0ds-ag-FNe" style="IBUITableViewCellStyleSubtitle" id="mMd-M7-p9i">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMd-M7-p9i" id="OaW-YA-aOe">
@@ -49,27 +49,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Дни рождения" id="1EA-8b-oXt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="gmW-z3-aYX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gmW-z3-aYX">
                             <connections>
-                                <segue destination="E3w-ob-ZdG" kind="presentation" id="iOK-gT-L9f"/>
+                                <segue destination="E3w-ob-ZdG" kind="presentation" identifier="reuseIdentifier" modalPresentationStyle="fullScreen" id="Eco-cf-mGj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyT-u9-c5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="149"/>
+            <point key="canvasLocation" x="2486.9565217391305" y="148.66071428571428"/>
         </scene>
         <!--Add Birthday View Controller-->
         <scene sceneID="MXq-AD-SIl">
             <objects>
                 <viewController id="E3w-ob-ZdG" customClass="AddBirthdayViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LH-qi-5yB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" backIndicatorImage="square.and.arrow.up.fill" catalog="system" backIndicatorTransitionMaskImage="square.and.arrow.up" translatesAutoresizingMaskIntoConstraints="NO" id="pUg-AE-u0E">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" systemColor="systemYellowColor"/>
                                 <items>
                                     <navigationItem title="Добавления Дня рождения" id="SBj-8L-TH9">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XIH-vx-O5f">
@@ -87,41 +88,43 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя именниника" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="wic-qK-79j">
-                                <rect key="frame" x="120" y="96" width="274" height="34"/>
+                                <rect key="frame" x="120" y="128" width="274" height="34"/>
+                                <color key="backgroundColor" red="0.8015632962" green="0.91830904960000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилиля именниника" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lW-DW-86o">
-                                <rect key="frame" x="120" y="150" width="274" height="35"/>
+                                <rect key="frame" x="120" y="182" width="274" height="35"/>
+                                <color key="backgroundColor" red="0.8015632962" green="0.91830904960000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="fdG-nO-ahZ">
-                                <rect key="frame" x="0.0" y="265" width="414" height="216"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="297" width="414" height="216"/>
+                                <color key="backgroundColor" red="0.8015632962" green="0.91830904960000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <locale key="locale" localeIdentifier="ru_RU"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKJ-XA-83G">
-                                <rect key="frame" x="10" y="155" width="100" height="24"/>
+                                <rect key="frame" x="10" y="187" width="100" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-uh-xCS">
-                                <rect key="frame" x="10" y="219" width="394" height="23"/>
+                                <rect key="frame" x="10" y="251" width="394" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okW-yY-MUj">
-                                <rect key="frame" x="10" y="96" width="100" height="24"/>
+                                <rect key="frame" x="10" y="128" width="100" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LhH-wa-pBl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="wic-qK-79j" firstAttribute="top" secondItem="pUg-AE-u0E" secondAttribute="bottom" constant="40" id="2FH-Wd-CKz"/>
                             <constraint firstItem="AKJ-XA-83G" firstAttribute="top" secondItem="okW-yY-MUj" secondAttribute="bottom" constant="35" id="4Of-0C-gqL"/>
@@ -148,7 +151,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="v9V-8i-ewu"/>
                     <connections>
-                        <outlet property="birthdayTextLabel" destination="QVC-uh-xCS" id="w4Q-S1-Fmp"/>
                         <outlet property="userBirthdayDatePicker" destination="fdG-nO-ahZ" id="hmC-oB-Gc9"/>
                         <outlet property="userLastNameTextField" destination="8lW-DW-86o" id="yGA-c5-evW"/>
                         <outlet property="userNameTextField" destination="wic-qK-79j" id="TF7-KS-nKd"/>
@@ -156,23 +158,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ls2-5i-uQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="149"/>
+            <point key="canvasLocation" x="3318.840579710145" y="148.66071428571428"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="p05-U0-9Or">
+        <scene sceneID="xIU-9i-KCg">
             <objects>
-                <navigationController id="Lvd-3w-6X6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6W5-uF-ks7">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8d5-kz-aVl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fsp-Ji-jav">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemYellowColor"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="feq-Pr-hei" kind="relationship" relationship="rootViewController" id="yWM-NS-wnn"/>
+                        <segue destination="feq-Pr-hei" kind="relationship" relationship="rootViewController" id="8zl-qT-LGq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NGP-GA-w1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1d-Ge-wvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="149"/>
+            <point key="canvasLocation" x="1576.8115942028987" y="148.66071428571428"/>
         </scene>
     </scenes>
     <resources>
@@ -183,6 +188,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
