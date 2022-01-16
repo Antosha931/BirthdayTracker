@@ -76,7 +76,7 @@ class BirthdayListTableViewController: UITableViewController {
             cell.detailTextLabel?.text = ""
         }
         
-        if indexPath.row % 2 == 0 {
+        if indexPath.row.isMultiple(of: 2) {
             cell.backgroundColor = #colorLiteral(red: 1, green: 0.6899557249, blue: 0.9783657575, alpha: 1)
             return cell
         } else {
@@ -109,5 +109,9 @@ class BirthdayListTableViewController: UITableViewController {
         }
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }

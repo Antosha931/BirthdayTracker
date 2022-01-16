@@ -103,6 +103,9 @@
                                 <rect key="frame" x="0.0" y="297" width="414" height="216"/>
                                 <color key="backgroundColor" red="0.8015632962" green="0.91830904960000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <locale key="locale" localeIdentifier="ru_RU"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="E3w-ob-ZdG" eventType="valueChanged" id="7vp-RJ-ehY"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKJ-XA-83G">
                                 <rect key="frame" x="10" y="187" width="100" height="24"/>
@@ -151,6 +154,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v9V-8i-ewu"/>
                     <connections>
+                        <outlet property="birthdayLabel" destination="QVC-uh-xCS" id="DQc-0X-EdC"/>
                         <outlet property="userBirthdayDatePicker" destination="fdG-nO-ahZ" id="hmC-oB-Gc9"/>
                         <outlet property="userLastNameTextField" destination="8lW-DW-86o" id="yGA-c5-evW"/>
                         <outlet property="userNameTextField" destination="wic-qK-79j" id="TF7-KS-nKd"/>

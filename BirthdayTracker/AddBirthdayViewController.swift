@@ -15,6 +15,7 @@ class AddBirthdayViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userLastNameTextField: UITextField!
     @IBOutlet weak var userBirthdayDatePicker: UIDatePicker!
+    @IBOutlet weak var birthdayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,16 @@ class AddBirthdayViewController: UIViewController {
                 }
             }
         }
+    
+    @IBAction func changeDatePicker(_ sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.locale = Locale(identifier: "ru_RU")
+        
+        let textDate = formatter.string(from: sender.date)
+        birthdayLabel.text = "Дата рождения: \(textDate)"
+    }
     
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
