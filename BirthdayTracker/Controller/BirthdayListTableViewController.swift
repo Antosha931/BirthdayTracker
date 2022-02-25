@@ -12,13 +12,12 @@ import UserNotifications
 
 class BirthdayListTableViewController: UITableViewController {
     
-    
     let birthdayCellIdentifier = "birthdayCellIdentifier"
     
     var birthdayList = [Birthday]()
     
     let formmater = DateFormatter()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

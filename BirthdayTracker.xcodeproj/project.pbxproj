@@ -64,19 +64,51 @@
 		2A431ED4278B0023004688BC /* BirthdayTracker */ = {
 			isa = PBXGroup;
 			children = (
-				2A431ED5278B0023004688BC /* AppDelegate.swift */,
-				2A431ED7278B0023004688BC /* SceneDelegate.swift */,
+				2A4FB47C27BAB8E000C35070 /* Model */,
+				2A4FB47E27BAB8EB00C35070 /* View */,
+				2A4FB47F27BAB8F100C35070 /* Controller */,
+				2A4FB48227BAB91B00C35070 /* SupportingFiles */,
+			);
+			path = BirthdayTracker;
+			sourceTree = "<group>";
+		};
+		2A4FB47C27BAB8E000C35070 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				2A2AB777278FB54E0073254A /* Birthday+CoreDataClass.swift */,
 				2A2AB778278FB54E0073254A /* Birthday+CoreDataProperties.swift */,
-				2A431EEF278B4055004688BC /* BirthdayListTableViewController.swift */,
-				2A431EF3278B40C7004688BC /* AddBirthdayViewController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A4FB47E27BAB8EB00C35070 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A431ED5278B0023004688BC /* AppDelegate.swift */,
+				2A431ED7278B0023004688BC /* SceneDelegate.swift */,
 				2A431EDB278B0023004688BC /* Main.storyboard */,
 				2A431EE3278B003E004688BC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2A4FB47F27BAB8F100C35070 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A431EEF278B4055004688BC /* BirthdayListTableViewController.swift */,
+				2A431EF3278B40C7004688BC /* AddBirthdayViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2A4FB48227BAB91B00C35070 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				2A431EE1278B003E004688BC /* Assets.xcassets */,
 				2A431EE6278B003F004688BC /* Info.plist */,
 				2A431EDE278B0023004688BC /* BirthdayTracker.xcdatamodeld */,
 			);
-			path = BirthdayTracker;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XJC493SX7;
-				INFOPLIST_FILE = BirthdayTracker/Info.plist;
+				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XJC493SX7;
-				INFOPLIST_FILE = BirthdayTracker/Info.plist;
+				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
