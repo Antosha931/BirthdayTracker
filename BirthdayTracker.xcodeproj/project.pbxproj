@@ -64,6 +64,8 @@
 		2A431ED4278B0023004688BC /* BirthdayTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A431ED5278B0023004688BC /* AppDelegate.swift */,
+				2A431ED7278B0023004688BC /* SceneDelegate.swift */,
 				2A4FB47C27BAB8E000C35070 /* Model */,
 				2A4FB47E27BAB8EB00C35070 /* View */,
 				2A4FB47F27BAB8F100C35070 /* Controller */,
@@ -84,8 +86,6 @@
 		2A4FB47E27BAB8EB00C35070 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2A431ED5278B0023004688BC /* AppDelegate.swift */,
-				2A431ED7278B0023004688BC /* SceneDelegate.swift */,
 				2A431EDB278B0023004688BC /* Main.storyboard */,
 				2A431EE3278B003E004688BC /* LaunchScreen.storyboard */,
 			);
@@ -337,14 +337,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XJC493SX7;
 				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AntonyTitov.com.by.BirthdayTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,14 +360,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XJC493SX7;
 				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AntonyTitov.com.by.BirthdayTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
