@@ -1,37 +1,60 @@
 //
-//  BirthdayListTableViewController.swift
+//  MainViewController.swift
 //  BirthdayTracker
 //
-//  Created by Антон Титов on 09.01.2022.
+//  Created by Антон Титов on 24.09.2023.
 //
 
 import UIKit
+import SnapKit
 import CoreData
-import UserNotifications
 
-
-class BirthdayListTableViewController: UITableViewController {
+final class MainViewController: UIViewController {
     
-    let birthdayCellIdentifier = "birthdayCellIdentifier"
+    // MARK: - Private properties
     
-    var birthdayList = [Birthday]()
+    private var birthdayList = [Birthday]()
     
-    let formmater = DateFormatter()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        
+        return tableView
+    }()
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.clearsSelectionOnViewWillAppear = false
-        
-        tableView.delegate = self
-        
-        formmater.dateStyle = DateFormatter.Style.full
-        formmater.timeStyle = .none
+        setupConstraints()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        receivingData()
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupConstraints() {
+        view.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            
+        }
+    }
+    
+    private func setupUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(BirthdayTableViewCell.self, forCellReuseIdentifier: Cell.birthdayTableViewCell.description)
+    }
+    
+    private func receivingData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
         
@@ -45,35 +68,25 @@ class BirthdayListTableViewController: UITableViewController {
         } catch let error {
             print("Не удалось сохранить из-за ошибки: \(error)")
         }
+        
         tableView.reloadData()
     }
+    
+}
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - TableView data source
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return birthdayList.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: birthdayCellIdentifier, for: indexPath)
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.customDequeueReusableCell(withNameCell: .birthdayTableViewCell, for: indexPath)
+                as? BirthdayTableViewCell else { return UITableViewCell() }
         
-        let birthday = birthdayList[indexPath.row]
-        
-        let firstName = birthday.firstName ?? ""
-        
-        let lastName = birthday.lastName ?? ""
-        
-        cell.textLabel?.text = firstName + " " + lastName
-        
-        if let date = birthday.dateOfBirth as Date? {
-            cell.detailTextLabel?.text = formmater.string(from: date)
-        } else {
-            cell.detailTextLabel?.text = ""
-        }
+        cell.configureCell(birthday: birthdayList[indexPath.row])
         
         if indexPath.row.isMultiple(of: 2) {
             cell.backgroundColor = #colorLiteral(red: 1, green: 0.6899557249, blue: 0.9783657575, alpha: 1)
@@ -84,9 +97,13 @@ class BirthdayListTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Delegate
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if birthdayList.count > indexPath.row {
             let birthday = birthdayList[indexPath.row]
             
@@ -95,7 +112,7 @@ class BirthdayListTableViewController: UITableViewController {
                 centre.removePendingNotificationRequests(withIdentifiers: [identifier])
             }
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             let context = appDelegate.persistentContainer.viewContext
             context.delete(birthday)
             birthdayList.remove(at: indexPath.row)
@@ -110,7 +127,7 @@ class BirthdayListTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
 }

@@ -3,34 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A287FDD2AC0A9A3002C70B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A287FDC2AC0A9A3002C70B8 /* SnapKit */; };
+		2A287FE12AC0A9E5002C70B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287FE02AC0A9E5002C70B8 /* MainViewController.swift */; };
+		2A287FE42AC0AA81002C70B8 /* Extension + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287FE32AC0AA81002C70B8 /* Extension + UITableView.swift */; };
+		2A287FE72AC0AD5A002C70B8 /* BirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287FE62AC0AD5A002C70B8 /* BirthdayTableViewCell.swift */; };
 		2A2AB779278FB54E0073254A /* Birthday+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AB777278FB54E0073254A /* Birthday+CoreDataClass.swift */; };
 		2A2AB77A278FB54E0073254A /* Birthday+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AB778278FB54E0073254A /* Birthday+CoreDataProperties.swift */; };
 		2A431ED6278B0023004688BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A431ED5278B0023004688BC /* AppDelegate.swift */; };
 		2A431ED8278B0023004688BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A431ED7278B0023004688BC /* SceneDelegate.swift */; };
-		2A431EDD278B0023004688BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A431EDB278B0023004688BC /* Main.storyboard */; };
 		2A431EE0278B0023004688BC /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A431EDE278B0023004688BC /* BirthdayTracker.xcdatamodeld */; };
 		2A431EE2278B003E004688BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A431EE1278B003E004688BC /* Assets.xcassets */; };
 		2A431EE5278B003E004688BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A431EE3278B003E004688BC /* LaunchScreen.storyboard */; };
-		2A431EF0278B4055004688BC /* BirthdayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A431EEF278B4055004688BC /* BirthdayListTableViewController.swift */; };
 		2A431EF4278B40C7004688BC /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A431EF3278B40C7004688BC /* AddBirthdayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A287FE02AC0A9E5002C70B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2A287FE32AC0AA81002C70B8 /* Extension + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableView.swift"; sourceTree = "<group>"; };
+		2A287FE62AC0AD5A002C70B8 /* BirthdayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewCell.swift; sourceTree = "<group>"; };
 		2A2AB777278FB54E0073254A /* Birthday+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Birthday+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2A2AB778278FB54E0073254A /* Birthday+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Birthday+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A431ED2278B0023004688BC /* BirthdayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A431ED5278B0023004688BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A431ED7278B0023004688BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A431EDC278B0023004688BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A431EDF278B0023004688BC /* BirthdayTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BirthdayTracker.xcdatamodel; sourceTree = "<group>"; };
 		2A431EE1278B003E004688BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A431EE4278B003E004688BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A431EE6278B003F004688BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A431EEF278B4055004688BC /* BirthdayListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListTableViewController.swift; sourceTree = "<group>"; };
 		2A431EF3278B40C7004688BC /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,12 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A287FDD2AC0A9A3002C70B8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A287FE22AC0AA68002C70B8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A287FE32AC0AA81002C70B8 /* Extension + UITableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2A287FE52AC0AD28002C70B8 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A287FE62AC0AD5A002C70B8 /* BirthdayTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		2A431EC9278B0023004688BC = {
 			isa = PBXGroup;
 			children = (
@@ -66,9 +86,10 @@
 			children = (
 				2A431ED5278B0023004688BC /* AppDelegate.swift */,
 				2A431ED7278B0023004688BC /* SceneDelegate.swift */,
+				2A287FE22AC0AA68002C70B8 /* Extension */,
 				2A4FB47C27BAB8E000C35070 /* Model */,
 				2A4FB47E27BAB8EB00C35070 /* View */,
-				2A4FB47F27BAB8F100C35070 /* Controller */,
+				2A4FB47F27BAB8F100C35070 /* Controllers */,
 				2A4FB48227BAB91B00C35070 /* SupportingFiles */,
 			);
 			path = BirthdayTracker;
@@ -86,19 +107,18 @@
 		2A4FB47E27BAB8EB00C35070 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2A431EDB278B0023004688BC /* Main.storyboard */,
-				2A431EE3278B003E004688BC /* LaunchScreen.storyboard */,
+				2A287FE52AC0AD28002C70B8 /* CustomCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		2A4FB47F27BAB8F100C35070 /* Controller */ = {
+		2A4FB47F27BAB8F100C35070 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2A431EEF278B4055004688BC /* BirthdayListTableViewController.swift */,
 				2A431EF3278B40C7004688BC /* AddBirthdayViewController.swift */,
+				2A287FE02AC0A9E5002C70B8 /* MainViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2A4FB48227BAB91B00C35070 /* SupportingFiles */ = {
@@ -107,6 +127,7 @@
 				2A431EE1278B003E004688BC /* Assets.xcassets */,
 				2A431EE6278B003F004688BC /* Info.plist */,
 				2A431EDE278B0023004688BC /* BirthdayTracker.xcdatamodeld */,
+				2A431EE3278B003E004688BC /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -127,6 +148,9 @@
 			dependencies = (
 			);
 			name = BirthdayTracker;
+			packageProductDependencies = (
+				2A287FDC2AC0A9A3002C70B8 /* SnapKit */,
+			);
 			productName = BirthdayTracker;
 			productReference = 2A431ED2278B0023004688BC /* BirthdayTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 2A431EC9278B0023004688BC;
+			packageReferences = (
+				2A287FDB2AC0A9A3002C70B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 2A431ED3278B0023004688BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,7 +197,6 @@
 			files = (
 				2A431EE5278B003E004688BC /* LaunchScreen.storyboard in Resources */,
 				2A431EE2278B003E004688BC /* Assets.xcassets in Resources */,
-				2A431EDD278B0023004688BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +209,11 @@
 			files = (
 				2A431EF4278B40C7004688BC /* AddBirthdayViewController.swift in Sources */,
 				2A431ED6278B0023004688BC /* AppDelegate.swift in Sources */,
+				2A287FE72AC0AD5A002C70B8 /* BirthdayTableViewCell.swift in Sources */,
 				2A2AB779278FB54E0073254A /* Birthday+CoreDataClass.swift in Sources */,
-				2A431EF0278B4055004688BC /* BirthdayListTableViewController.swift in Sources */,
+				2A287FE12AC0A9E5002C70B8 /* MainViewController.swift in Sources */,
 				2A431ED8278B0023004688BC /* SceneDelegate.swift in Sources */,
+				2A287FE42AC0AA81002C70B8 /* Extension + UITableView.swift in Sources */,
 				2A431EE0278B0023004688BC /* BirthdayTracker.xcdatamodeld in Sources */,
 				2A2AB77A278FB54E0073254A /* Birthday+CoreDataProperties.swift in Sources */,
 			);
@@ -194,14 +222,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2A431EDB278B0023004688BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A431EDC278B0023004688BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2A431EE3278B003E004688BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,6 +358,7 @@
 				DEVELOPMENT_TEAM = 7XJC493SX7;
 				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +382,7 @@
 				DEVELOPMENT_TEAM = 7XJC493SX7;
 				INFOPLIST_FILE = BirthdayTracker/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A287FDB2AC0A9A3002C70B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit?ysclid=le4rwb22fq855077644";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A287FDC2AC0A9A3002C70B8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A287FDB2AC0A9A3002C70B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2A431EDE278B0023004688BC /* BirthdayTracker.xcdatamodeld */ = {
